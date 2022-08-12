@@ -11,8 +11,11 @@ import 'custom_text.dart';
 PreferredSize topNavigationBar(
         BuildContext context, GlobalKey<ScaffoldState> key) =>
     PreferredSize(
-      preferredSize: Size(MediaQuery.of(context).size.width,
-          !ResponsiveWidget.isSmallScreen(context) ? 70 : 50),
+      preferredSize: Size(
+          MediaQuery.of(context).size.width,
+          !ResponsiveWidget.isSmallScreen(context)
+              ? MediaQuery.of(context).size.height / 10
+              : MediaQuery.of(context).size.height / 20),
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: ResponsiveWidget.isSmallScreen(context)

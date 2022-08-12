@@ -20,6 +20,7 @@ class SpanWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      textAlign: TextAlign.center,
       text: TextSpan(
           text: title,
           style: GoogleFonts.montserrat(

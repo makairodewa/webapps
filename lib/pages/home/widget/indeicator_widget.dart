@@ -12,7 +12,8 @@ class IndicatorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Padding(
-          padding: const EdgeInsets.only(top: 40),
+          padding:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
           child: AnimatedSmoothIndicator(
               activeIndex: homeController.activeIndex.value,
               effect: WormEffect(
