@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:footer/footer.dart';
 import 'package:get/get.dart';
+import 'package:webapps/constants/controllers.dart';
 import 'package:webapps/constants/style.dart';
 import 'package:webapps/helpers/reponsiveness.dart';
 import 'package:webapps/pages/home/widget/span_widget.dart';
@@ -12,9 +13,10 @@ class PostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
+    return CustomScrollView(
+      slivers: [
+        SliverList(
+            delegate: SliverChildListDelegate([
           if (ResponsiveWidget.isSmallScreen(context))
             _buildContainer()
           else
@@ -36,14 +38,14 @@ class PostPage extends StatelessWidget {
                     mainAxisExtent: 600,
                     childAspectRatio: 2),
                 itemBuilder: (context, index) {
-                  return const CardNewsWidget();
+                  return CardNewsWidget(index: index);
                 },
               ),
             ),
           ),
           Footer(child: const FooterViewWidget())
-        ],
-      ),
+        ])),
+      ],
     );
   }
 
@@ -89,59 +91,63 @@ class PostPage extends StatelessWidget {
 class CardNewsWidget extends StatelessWidget {
   const CardNewsWidget({
     Key? key,
+    required int index,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Image(
-            image: AssetImage('assets/images/bg.jpg'),
-            fit: BoxFit.cover,
+    return AnimatedScale(
+        scale: homeController.scale.value,
+        duration: const Duration(microseconds: 500),
+        child: Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Image(
+                image: AssetImage('assets/images/bg.jpg'),
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Cerita Para Pencari Kelelawar di Gorontalo 'Kebal' Covid-19, Kok Bisa?",
+                      style: titleNews,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text("10/10/202$int", style: dateNews),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "Liputan6.com, Gorontalo - Kelelawar merupakan satwa liar santer dikabarkan sebagai pembawa virus penyebab Covid-19. Namun, hal itu ditepis oleh sejumlah pencari kelelawar di Desa Olibu, Kecamatan Pagu ",
+                      style: bodyNews,
+                      maxLines: 6,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: const Text("Selengkapnya",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400))),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Cerita Para Pencari Kelelawar di Gorontalo 'Kebal' Covid-19, Kok Bisa?",
-                  style: titleNews,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text("10/10/2022", style: dateNews),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text(
-                  "Liputan6.com, Gorontalo - Kelelawar merupakan satwa liar santer dikabarkan sebagai pembawa virus penyebab Covid-19. Namun, hal itu ditepis oleh sejumlah pencari kelelawar di Desa Olibu, Kecamatan Pagu ",
-                  style: bodyNews,
-                  maxLines: 6,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: TextButton(
-                      onPressed: () {},
-                      child: const Text("Selengkapnya",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w400))),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+        ));
   }
 }

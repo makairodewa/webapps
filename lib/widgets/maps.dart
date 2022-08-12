@@ -14,8 +14,8 @@ class MyMaps extends StatelessWidget {
               ? MediaQuery.of(context).size.width / 10
               : 0,
           vertical: 20),
-      child: Container(
-        height: 600,
+      child: SizedBox(
+        height: 300,
         child: GoogleMap(
           onMapCreated: homeController.onMapCreated,
           initialCameraPosition: CameraPosition(

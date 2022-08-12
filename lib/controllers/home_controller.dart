@@ -10,6 +10,7 @@ class HomeController extends GetxController {
   CarouselController buttonCarouselController = CarouselController();
   CarouselController carouselController = CarouselController();
   late ScrollController scrollController;
+  var scale = 1.0.obs;
   @override
   void onInit() {
     scrollController = ScrollController();
@@ -32,19 +33,7 @@ class HomeController extends GetxController {
   void onSelected(String value) {
     selectedValue = value;
     update();
-    // changeLanguage(selectedValue);
   }
-
-  // changeLanguage(String? selectedLanguage) {
-  //   switch (selectedLanguage) {
-  //     case 'Aparatur Desa':
-  //       Get.toNamed(Routes.APARAT);
-  //       break;
-  //     case 'Pemerintah':
-  //       Get.toNamed(Routes.VISI_MISI);
-  //       break;
-  //   }
-  // }
 
   final List<String> image =
       List.generate(5, (index) => 'https://picsum.photos/id/$index/200/300')
@@ -52,7 +41,7 @@ class HomeController extends GetxController {
 
   late GoogleMapController mapController;
 
-  final LatLng center = const LatLng(45.521563, -122.677433);
+  final LatLng center = const LatLng(-9.500270, 119.201852);
 
   void onMapCreated(GoogleMapController controller) {
     mapController = controller;

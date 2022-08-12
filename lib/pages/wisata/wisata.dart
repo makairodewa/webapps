@@ -34,7 +34,9 @@ class WisataPage extends StatelessWidget {
                       maxCrossAxisExtent: 400,
                       mainAxisExtent: 600,
                       childAspectRatio: 2),
-                  itemBuilder: (context, index) => const CardNewsWidget(),
+                  itemBuilder: (context, index) => CardNewsWidget(
+                    index: index,
+                  ),
                 ),
               ),
             ),

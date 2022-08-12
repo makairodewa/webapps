@@ -1,5 +1,3 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +12,6 @@ import 'package:webapps/pages/404/error.dart';
 import 'package:webapps/pages/authentication/authentication.dart';
 import 'package:webapps/widgets/custom_text.dart';
 import 'package:webapps/widgets/horizontal_menu_item.dart';
-
 import 'routing/routes.dart';
 
 void main() {
@@ -53,19 +50,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Desa Kelembu Kanaika',
       theme: ThemeData(
-        scaffoldBackgroundColor: light,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.black),
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.windows: ZoomPageTransitionsBuilder(),
-          },
-        ),
-        primarySwatch: Colors.blue,
-      ),
+          primaryColor: ColorConstant.titleColor,
+          scaffoldBackgroundColor: light,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
+              .apply(bodyColor: Colors.black),
+          pageTransitionsTheme: const PageTransitionsTheme(
+            builders: {
+              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.windows: ZoomPageTransitionsBuilder(),
+            },
+          ),
+          primarySwatch: Colors.amber),
     );
   }
 }
