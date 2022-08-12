@@ -15,7 +15,7 @@ PreferredSize topNavigationBar(
           MediaQuery.of(context).size.width,
           !ResponsiveWidget.isSmallScreen(context)
               ? MediaQuery.of(context).size.height / 10
-              : MediaQuery.of(context).size.height / 15),
+              : MediaQuery.of(context).size.height / 10),
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: ResponsiveWidget.isSmallScreen(context)

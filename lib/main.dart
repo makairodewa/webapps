@@ -78,7 +78,7 @@ class SideMenuItemMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (ResponsiveWidget.isCustomSize(context)) {
-      return VertticalMenuItemMobile(
+      return HorizontalMenuItemMObile(
         itemName: itemName,
         onTap: onTap,
       );

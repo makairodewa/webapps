@@ -25,7 +25,7 @@ class PostPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: !ResponsiveWidget.isSmallScreen(context)
                   ? MediaQuery.of(context).size.width / 10
-                  : 0,
+                  : 20,
               vertical: 50,
             ),
             child: SizedBox(
@@ -54,7 +54,7 @@ class PostPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: !ResponsiveWidget.isSmallScreen(context)
               ? MediaQuery.of(context).size.width / 10
-              : 0,
+              : 20,
           vertical: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

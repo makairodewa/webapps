@@ -44,4 +44,6 @@ class MenuController extends GetxController {
       color: isHovering(itemName) ? dark : lightGrey,
     );
   }
+
+  var data = ["Aparat Desa", "Visi Misi", "Sejarah Desa"];
 }
