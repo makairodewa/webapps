@@ -10,18 +10,18 @@ class AparaturDesaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 40),
       child: Material(
         shadowColor: Colors.black26,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SpanWidget(
+            const SpanWidget(
               title: "Aparat",
               subTitle: "Desa",
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Expanded(
@@ -59,11 +59,11 @@ class AparaturDesaView extends StatelessWidget {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(17))),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10),
                                 child: Text(
                                   'Launch a Project',
                                   style: GoogleFonts.montserrat(
@@ -72,10 +72,10 @@ class AparaturDesaView extends StatelessWidget {
                                       color: ColorConstant.titleColor),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 260,
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 20),

@@ -9,7 +9,11 @@ class MyMaps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 50, left: 20, right: 20, top: 40),
+      padding: EdgeInsets.symmetric(
+          horizontal: !ResponsiveWidget.isSmallScreen(context)
+              ? MediaQuery.of(context).size.width / 10
+              : 0,
+          vertical: 20),
       child: InkWell(
         // onTap: Utilty.openMyLocation,
         child: Center(

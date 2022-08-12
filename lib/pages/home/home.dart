@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:footer/footer.dart';
 import 'package:webapps/pages/home/widget/about_widget.dart';
 import 'package:webapps/pages/home/widget/images_slider.dart';
 import 'package:webapps/pages/home/widget/indeicator_widget.dart';
@@ -16,14 +17,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: const [
+        children: [
           ImgSliderHeader(),
           IndicatorWidget(),
           LatestNewsWidget(),
           AboutView(),
           TourismPlace(),
           MyMaps(),
-          FooterView(),
+          Footer(child: FooterViewWidget()),
         ],
       ),
     );

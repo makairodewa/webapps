@@ -20,8 +20,9 @@ class CustomText extends StatelessWidget {
         color: color ?? Colors.black,
         fontWeight: weight ?? FontWeight.normal,
       ),
-      textAlign: TextAlign.left,
+      textAlign: TextAlign.center,
       maxLines: maxLines ?? 3,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

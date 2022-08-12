@@ -9,23 +9,29 @@ class SpanWidget extends StatelessWidget {
     Key? key,
     required this.title,
     required this.subTitle,
+    this.fontZise,
+    this.color,
   }) : super(key: key);
 
   final String title;
   final String subTitle;
+  final double? fontZise;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
           text: title,
           style: GoogleFonts.montserrat(
-              color: Colors.black, fontSize: 40, fontWeight: FontWeight.w400),
+              color: color ?? Colors.black,
+              fontSize: fontZise ?? 40,
+              fontWeight: FontWeight.w400),
           children: [
             TextSpan(
               text: subTitle,
               style: GoogleFonts.montserrat(
                   color: ColorConstant.titleColor,
-                  fontSize: 40,
+                  fontSize: fontZise ?? 40,
                   fontWeight: FontWeight.w400),
             )
           ]),

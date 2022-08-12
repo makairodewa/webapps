@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:webapps/constants/style.dart';
 import 'package:webapps/widgets/custom_text.dart';
 
@@ -40,7 +39,7 @@ class CustomButtonWidget extends StatelessWidget {
                 text: text,
                 color: Colors.white,
               ),
-              Icon(
+              const Icon(
                 Icons.keyboard_arrow_right_rounded,
                 color: Colors.white,
               ),

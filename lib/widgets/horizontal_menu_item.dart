@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webapps/constants/controllers.dart';
 import 'package:webapps/constants/style.dart';
+import 'package:webapps/helpers/reponsiveness.dart';
 
 import 'custom_text.dart';
 
@@ -23,7 +24,8 @@ class HorizontalMenuItem extends StatelessWidget {
       },
       child: Obx(
         () => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(
+              horizontal: !ResponsiveWidget.isLargeScreen(context) ? 10 : 20),
           child: Container(
             color: menuController.isHovering(itemName!)
                 ? lightGrey.withOpacity(.1)
@@ -52,7 +54,7 @@ class HorizontalMenuItem extends StatelessWidget {
                   child: Container(
                     width: 50,
                     height: 3,
-                    color: dark,
+                    color: ColorConstant.titleColor,
                   ),
                 ),
               ],
@@ -96,7 +98,7 @@ class HorizontalMenuItemMObile extends StatelessWidget {
                     child: Container(
                       width: 6,
                       height: 40,
-                      color: dark,
+                      color: ColorConstant.titleColor,
                     ),
                   ),
                   SizedBox(width: width / 88),

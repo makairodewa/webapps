@@ -29,6 +29,8 @@ class MenuController extends GetxController {
         return _customIcon(Icons.place, itemName);
       case homePagegeDisplayName:
         return _customIcon(Icons.home, itemName);
+      case profilDesaPageDisplayName:
+        return _customIcon(Icons.account_balance_outlined, itemName);
       default:
         return _customIcon(Icons.exit_to_app, itemName);
     }

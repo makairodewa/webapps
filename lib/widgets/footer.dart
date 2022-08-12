@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:webapps/constants/style.dart';
 import 'package:webapps/helpers/reponsiveness.dart';
 import 'package:webapps/widgets/custom_text.dart';
 
-class FooterView extends StatelessWidget {
-  const FooterView({Key? key}) : super(key: key);
+class FooterViewWidget extends StatelessWidget {
+  const FooterViewWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 30),
-        child: Container(
-            padding: const EdgeInsets.all(20),
-            color: ColorConstant.titleColor,
-            width: double.infinity,
-            child: _buildRow(context)));
+      padding: const EdgeInsets.only(top: 20),
+      child: Container(
+          padding: const EdgeInsets.all(20),
+          width: double.infinity,
+          child: _buildRow(context)),
+    );
   }
 
   Row _buildRow(BuildContext context) {
@@ -35,6 +34,20 @@ class FooterView extends StatelessWidget {
               ResponsiveWidget.isSmallScreen(context)
                   ? _buildKontak()
                   : const SizedBox(),
+              const Text(
+                'Copyright ©2020, All Rights Reserved.',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12.0,
+                    color: Color(0xFF162A49)),
+              ),
+              const Text(
+                'Powered by NanuGroup',
+                style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12.0,
+                    color: Color(0xFF162A49)),
+              ),
             ],
           ),
         ),

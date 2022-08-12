@@ -82,13 +82,13 @@ class AboutView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomText(
+        const CustomText(
             text: "Desa kalembu Kanaika",
             weight: FontWeight.w900,
             color: Colors.white,
             size: 25.0),
-        SizedBox(height: 20),
-        CustomText(text: "Profile Desa", color: Colors.white, size: 25.0),
+        const SizedBox(height: 20),
+        const CustomText(text: "Profile Desa", color: Colors.white, size: 25.0),
         const CustomText(
           text: "Visi Misi",
           color: Colors.white,

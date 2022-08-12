@@ -1,6 +1,6 @@
 const rootRoute = "/";
 
-const homePagegeDisplayName = "beranda";
+const homePagegeDisplayName = "Beranda";
 const homePagegeRoute = "/beranda";
 
 const newsPageDisplayName = "Berita";
@@ -8,6 +8,9 @@ const newsPageRoute = "/berita";
 
 const toursimPlacePageDisplayName = "Desa Wisata";
 const toursimPlacePageRoute = "/wisata";
+
+const profilDesaPageDisplayName = "Profil Desa";
+const profilDesaPageRoute = "/profil";
 
 const authenticationPageDisplayName = "Log out";
 const authenticationPageRoute = "/auth";
@@ -23,5 +26,6 @@ List<MenuItem> sideMenuItemRoutes = [
   MenuItem(homePagegeDisplayName, homePagegeRoute),
   MenuItem(newsPageDisplayName, newsPageRoute),
   MenuItem(toursimPlacePageDisplayName, toursimPlacePageRoute),
+  MenuItem(profilDesaPageDisplayName, profilDesaPageRoute),
   MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];

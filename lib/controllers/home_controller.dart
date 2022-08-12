@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   static HomeController instance = Get.find();
-
   var activeIndex = 0.obs;
   var activeIndexT = 0.obs;
   CarouselController buttonCarouselController = CarouselController();

@@ -12,7 +12,7 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Container(
       color: light,
       child: ListView(
@@ -21,12 +21,12 @@ class SideMenu extends StatelessWidget {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(
                   children: [
-                    SizedBox(width: _width / 48),
+                    SizedBox(width: width / 48),
                     Padding(
                       padding: const EdgeInsets.only(right: 12),
                       child: Image.asset("assets/icons/logo.png"),
@@ -39,10 +39,10 @@ class SideMenu extends StatelessWidget {
                         color: active,
                       ),
                     ),
-                    SizedBox(width: _width / 48),
+                    SizedBox(width: width / 48),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
               ],

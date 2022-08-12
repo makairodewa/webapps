@@ -1,8 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:webapps/constants/controllers.dart';
 import 'package:webapps/constants/style.dart';
 import 'package:webapps/controllers/home_controller.dart';
@@ -18,7 +18,6 @@ import 'package:webapps/widgets/horizontal_menu_item.dart';
 import 'routing/routes.dart';
 
 void main() {
-  setUrlStrategy(PathUrlStrategy());
   runApp(const MyApp());
 }
 
@@ -39,11 +38,11 @@ class MyApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(
-          name: rootRoute,
-          page: () {
-            return SiteLayout();
-          },
-        ),
+            name: rootRoute,
+            page: () {
+              return SiteLayout();
+            },
+            transition: Transition.leftToRight),
         GetPage(
             name: authenticationPageRoute,
             page: () => const AuthenticationPage(),
@@ -129,32 +128,30 @@ class VertticalMenuItemMobile extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: menuController.returnIconFor(itemName!),
-                          ),
-                          if (!menuController.isActive(itemName!))
-                            Flexible(
-                                child: CustomText(
-                              text: itemName!,
-                              color: menuController.isHovering(itemName!)
-                                  ? Colors.white
-                                  : lightGrey,
-                            ))
-                          else
-                            Flexible(
-                                child: CustomText(
-                              text: itemName,
-                              color: Colors.white,
-                              size: 18,
-                              weight: FontWeight.bold,
-                            ))
-                        ],
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: menuController.returnIconFor(itemName!),
+                        ),
+                        if (!menuController.isActive(itemName!))
+                          Flexible(
+                              child: CustomText(
+                            text: itemName!,
+                            color: menuController.isHovering(itemName!)
+                                ? Colors.white
+                                : lightGrey,
+                          ))
+                        else
+                          Flexible(
+                              child: CustomText(
+                            text: itemName,
+                            color: Colors.white,
+                            size: 18,
+                            weight: FontWeight.bold,
+                          ))
+                      ],
                     ),
                   ),
                 ],

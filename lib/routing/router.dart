@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webapps/pages/home/home.dart';
 import 'package:webapps/pages/post/post.dart';
+import 'package:webapps/pages/profil/profil.dart';
 import 'package:webapps/pages/wisata/wisata.dart';
 import 'package:webapps/routing/routes.dart';
 
@@ -12,6 +13,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(const PostPage());
     case toursimPlacePageRoute:
       return _getPageRoute(const WisataPage());
+    case profilDesaPageRoute:
+      return _getPageRoute(const ProfilDesaPage());
     default:
       return _getPageRoute(const HomePage());
   }

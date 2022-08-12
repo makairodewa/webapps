@@ -13,19 +13,23 @@ class LatestNewsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveWidget.isSmallScreen(context)
         ? _buildColumnMobile()
-        : _buildRowDesktop();
+        : _buildRowDesktop(context);
   }
 
-  Padding _buildRowDesktop() {
+  Padding _buildRowDesktop(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 50),
+      padding: EdgeInsets.symmetric(
+          horizontal: !ResponsiveWidget.isSmallScreen(context)
+              ? MediaQuery.of(context).size.width / 10
+              : 0,
+          vertical: 50),
       child: Column(
         children: [
-          SpanWidget(
+          const SpanWidget(
             title: "Berita ",
             subTitle: "Terbaru",
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -115,7 +119,7 @@ class NewsPost extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),
-            CustomText(
+            const CustomText(
               text: "11/11/2022",
             ),
           ],
