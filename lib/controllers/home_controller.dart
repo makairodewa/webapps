@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeController extends GetxController {
   static HomeController instance = Get.find();
@@ -48,4 +49,12 @@ class HomeController extends GetxController {
   final List<String> image =
       List.generate(5, (index) => 'https://picsum.photos/id/$index/200/300')
           .toList();
+
+  late GoogleMapController mapController;
+
+  final LatLng center = const LatLng(45.521563, -122.677433);
+
+  void onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
 }

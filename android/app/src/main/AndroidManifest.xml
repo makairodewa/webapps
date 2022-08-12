@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.webapps">
+     package="com.example.google_maps_in_flutter">
    <application
         android:label="webapps"
         android:name="${applicationName}"
