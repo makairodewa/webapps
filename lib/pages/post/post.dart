@@ -13,40 +13,40 @@ class PostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverList(
-            delegate: SliverChildListDelegate([
-          if (ResponsiveWidget.isSmallScreen(context))
-            _buildContainer()
-          else
-            _buildRow(context),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: !ResponsiveWidget.isSmallScreen(context)
-                  ? MediaQuery.of(context).size.width / 10
-                  : 20,
-              vertical: 50,
-            ),
-            child: SizedBox(
-              height: Get.height,
-              width: Get.width,
-              child: GridView.builder(
-                itemCount: 10,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 400,
-                    mainAxisExtent: 600,
-                    childAspectRatio: 2),
-                itemBuilder: (context, index) {
-                  return CardNewsWidget(index: index);
-                },
-              ),
+    return SingleChildScrollView(
+        child: Column(
+      children: [
+        if (ResponsiveWidget.isSmallScreen(context))
+          _buildContainer()
+        else
+          _buildRow(context),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: !ResponsiveWidget.isSmallScreen(context)
+                ? MediaQuery.of(context).size.width / 10
+                : 20,
+            vertical: 50,
+          ),
+          child: SizedBox(
+            height: Get.height,
+            width: Get.width,
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: 10,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 400,
+                  mainAxisExtent: 600,
+                  childAspectRatio: 2),
+              itemBuilder: (context, index) {
+                return CardNewsWidget(index: index);
+              },
             ),
           ),
-          Footer(child: const FooterViewWidget())
-        ])),
+        ),
+        Footer(child: const FooterViewWidget())
       ],
-    );
+    ));
   }
 
   Padding _buildRow(BuildContext context) {

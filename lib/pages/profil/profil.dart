@@ -44,10 +44,11 @@ class ProfilDesaPage extends StatelessWidget {
                               horizontal:
                                   !ResponsiveWidget.isSmallScreen(context)
                                       ? MediaQuery.of(context).size.width / 10
-                                      : 0,
+                                      : 20,
                               vertical: 50),
                           child: GridView.builder(
                             shrinkWrap: true,
+                            physics: const ScrollPhysics(),
                             itemCount: 10,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
@@ -109,7 +110,7 @@ class ProfilDesaPage extends StatelessWidget {
                                       !ResponsiveWidget.isSmallScreen(context)
                                           ? MediaQuery.of(context).size.width /
                                               10
-                                          : 0,
+                                          : 20,
                                   vertical: 50),
                               child: const SpanWidget(
                                 title: "Sejarah",
@@ -275,54 +276,49 @@ class CardAparatWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onHover: (value) {},
-      // onEnter: (e) => _mouseEnter(true),
-      // onExit: (e) => _mouseEnter(false),
-      child: Card(
-        elevation: 5,
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 30, bottom: 30, left: 30, right: 30),
-          child: Column(
-            children: const [
-              SizedBox(
-                width: 150,
-                height: 150,
-                child: CircleAvatar(
-                  maxRadius: 20,
-                  backgroundImage:
-                      NetworkImage('https://picsum.photos/seed/picsum/200/300'),
-                  backgroundColor: Colors.transparent,
-                ),
+    return Card(
+      elevation: 5,
+      child: Padding(
+        padding:
+            const EdgeInsets.only(top: 30, bottom: 30, left: 30, right: 30),
+        child: Column(
+          children: const [
+            SizedBox(
+              width: 150,
+              height: 150,
+              child: CircleAvatar(
+                maxRadius: 20,
+                backgroundImage:
+                    NetworkImage('https://picsum.photos/seed/picsum/200/300'),
+                backgroundColor: Colors.transparent,
               ),
-              SizedBox(
-                height: 20,
-              ),
-              CustomText(
-                text: "Ranus Ate",
-                size: 16,
-                weight: FontWeight.bold,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CustomText(
-                text: "Laboris ea mollit eiusmod et magna",
-                size: 13,
-                weight: FontWeight.w400,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              SocialAccountWidget(),
-              CustomText(
-                text: "Laboris ea mollit eiusmod et magna",
-                size: 13,
-                weight: FontWeight.w400,
-              )
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CustomText(
+              text: "Ranus Ate",
+              size: 16,
+              weight: FontWeight.bold,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            CustomText(
+              text: "Laboris ea mollit eiusmod et magna",
+              size: 13,
+              weight: FontWeight.w400,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SocialAccountWidget(),
+            CustomText(
+              text: "Laboris ea mollit eiusmod et magna",
+              size: 13,
+              weight: FontWeight.w400,
+            )
+          ],
         ),
       ),
     );

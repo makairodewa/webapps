@@ -12,7 +12,7 @@ class ImgSliderHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
+      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
       child: SizedBox(
         width: double.infinity,
         height: ResponsiveWidget.isSmallScreen(context) ? 400 : 500,

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     Get.put(MenuController());
     Get.put(HomeController());
     return GetMaterialApp(
-      initialRoute: homePagegeDisplayName,
+      initialRoute: rootRoute,
       unknownRoute: GetPage(
         name: '/not-found',
         page: () => const PageNotFound(),
@@ -44,7 +44,6 @@ class MyApp extends StatelessWidget {
             name: authenticationPageRoute,
             page: () => const AuthenticationPage(),
             curve: Curves.easeIn,
-            fullscreenDialog: true,
             transition: Transition.fadeIn),
       ],
       debugShowCheckedModeBanner: false,
